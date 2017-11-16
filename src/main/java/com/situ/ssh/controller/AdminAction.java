@@ -2,6 +2,7 @@ package com.situ.ssh.controller;
 
 import org.apache.struts2.ServletActionContext;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
 import com.opensymphony.xwork2.ActionSupport;
@@ -9,6 +10,7 @@ import com.situ.ssh.pojo.Admin;
 import com.situ.ssh.service.IAdminService;
 
 @Controller
+@Scope("prototype")
 public class AdminAction extends ActionSupport{
 	@Autowired
 	private IAdminService adminService;
@@ -20,7 +22,6 @@ public class AdminAction extends ActionSupport{
 	public void setAdmin(Admin admin) {
 		this.admin = admin;
 	}
-
 
 	public String login() {
 		if (adminService.login(admin) != null) {

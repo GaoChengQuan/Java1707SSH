@@ -19,7 +19,5 @@ public class AdminDaoImpl extends BaseDaoImpl<Admin> implements IAdminDao {
 			return list.get(0);
 		}
 		return null;
-
 	}
-
 }
