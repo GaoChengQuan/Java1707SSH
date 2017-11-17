@@ -14,6 +14,7 @@ import org.springframework.expression.spel.ast.Projection;
 import org.springframework.orm.hibernate5.support.HibernateDaoSupport;
 
 import com.situ.ssh.dao.base.IBaseDao;
+import com.situ.ssh.pojo.Student;
 import com.situ.ssh.util.PageBean;
 
 public class BaseDaoImpl<T> extends HibernateDaoSupport implements IBaseDao<T>{
@@ -46,8 +47,13 @@ public class BaseDaoImpl<T> extends HibernateDaoSupport implements IBaseDao<T>{
 	}
 
 	@Override
-	public void delete(T entity) {
-		getHibernateTemplate().delete(entity);
+	public boolean delete(T entity) {
+		try {
+			getHibernateTemplate().delete(entity);
+		} catch (Exception e) {
+			return false;
+		}
+		return true;
 	}
 
 	@Override

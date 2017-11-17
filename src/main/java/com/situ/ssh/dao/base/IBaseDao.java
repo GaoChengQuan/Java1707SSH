@@ -7,7 +7,7 @@ import com.situ.ssh.util.PageBean;
 
 public interface IBaseDao<T> {
 	public void save(T entity);
-	public void delete(T entity);
+	public boolean delete(T entity);
 	public void update(T entity);
 	public void findById(Serializable id);
 	public List<T> findAll();
