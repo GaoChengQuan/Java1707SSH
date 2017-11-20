@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	index
+	<jsp:forward page="${pageContext.request.contextPath}/page_index_index.action"></jsp:forward>
 </body>
 </html>

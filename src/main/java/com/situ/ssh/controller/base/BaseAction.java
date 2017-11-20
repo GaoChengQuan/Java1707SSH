@@ -32,7 +32,9 @@ public class BaseAction<T> extends ActionSupport implements ModelDriven<T> {
 	
 	private int page;//第几页
 	private int rows;//每页多少数据
-
+	
+	protected String ids;
+	
 	public BaseAction() {
 		// this:当前运行的类(AdminDao/StudentDao)
 		// this.getClass:当前运行类的字节码:AdminDao.class/StudentDao.class
@@ -94,5 +96,12 @@ public class BaseAction<T> extends ActionSupport implements ModelDriven<T> {
 	public void setRows(int rows) {
 		this.rows = rows;
 		pageBean.setPageSize(rows);
+	}
+	
+	public String getIds() {
+		return ids;
+	}
+	public void setIds(String ids) {
+		this.ids = ids;
 	}
 }

@@ -22,6 +22,7 @@
 			     {field:'cb',checkbox:true,align:'center'},    
 			     {field:'id',title:'编号',width:80,align:'center'},    
 			     {field:'name',title:'学生姓名',width:100,align:'center'},    
+			     {field:'age',title:'年龄',width:100,align:'center'},    
 			     {field:'password',title:'密码',width:80,align:'center'},    
 			]]  
 		});
@@ -79,8 +80,8 @@
 	/* 查找 */
 	function doSearch(){
 		$("#datagrid").datagrid("load",{
-			'dataDicName':$("#dataDicName").val(),
-			'dataDicValue':$("#dataDicValue").val()
+			'name':$("#s_nameId").val(),
+			'age':$("#s_ageId").val()
 		})
 	}
 	
@@ -142,14 +143,8 @@
 			<a class="easyui-linkbutton" href="javascript:doDelete()" iconCls="icon-remove">删除</a>
 		</div>
 		<div>
-			数据字典名：<input type="text" id="dataDicName" class="easyui-combobox"
-					 data-options="
-					 	url:'${ctx}/dataDic/findDataDicName.action',
-					 	valueField: 'dataDicName',
-					 	textField: 'dataDicName',
-					 	panelHeight:'auto',
-					 	editable:false  "/>
-		       数据字典值：<input type="text" id="dataDicValue"></input>
+			姓名：<input type="text" id="s_nameId"></input>
+		            年龄：<input type="text" id="s_ageId"></input>
 		  <a href="javascript:doSearch();" class="easyui-linkbutton" iconCls="icon-search">搜索</a>
 		</div>
 	</div>

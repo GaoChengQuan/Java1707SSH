@@ -94,5 +94,4 @@ public class BaseDaoImpl<T> extends HibernateDaoSupport implements IBaseDao<T>{
 		//getHibernateTemplate().find(sql, firstResult, pageSize);
 		pageBean.setRows(rows);
 	}
-
 }
